@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Contact Best Deal Hub – Get in touch with us for questions, feedback, or partnership inquiries.">
+<title>Contact Us – Best Deal Hub</title>
+<style>
+  :root {
+    --bg: #0d0f1a;
+    --bg2: #13162b;
+    --bg3: #1a1e35;
+    --border: #252a45;
+    --pink: #ff6b9d;
+    --purple: #c77dff;
+    --text: #e2e6ff;
+    --muted: #7b80a8;
+    --radius: 18px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6;}
+  a{text-decoration:none;color:inherit;}
+  .container{max-width:1200px;margin:0 auto;padding:60px 20px;}
+  .page-header{margin-bottom:40px;}
+  .page-header h1{font-size:2.2rem;background:linear-gradient(90deg,var(--pink),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;}
+  @media(max-width:700px){.contact-grid{grid-template-columns:1fr;}}
+  .contact-info{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:32px;}
+  .contact-info h2{color:var(--purple);margin-bottom:20px;font-size:1.5rem;}
+  .info-item{display:flex;align-items:center;gap:15px;margin-bottom:20px;padding:12px;background:var(--bg3);border-radius:12px;}
+  .info-icon{font-size:28px;}
+  .info-text p:first-child{font-weight:700;margin-bottom:3px;}
+  .info-text p:last-child{color:var(--muted);font-size:.85rem;}
+  .contact-form{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:32px;}
+  .contact-form h2{color:var(--purple);margin-bottom:20px;font-size:1.5rem;}
+  .form-group{margin-bottom:20px;}
+  .form-group label{display:block;margin-bottom:8px;font-weight:600;color:var(--text);}
+  .form-group input,.form-group textarea{width:100%;padding:12px;background:var(--bg3);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:.9rem;outline:none;}
+  .form-group input:focus,.form-group textarea:focus{border-color:var(--purple);}
+  .submit-btn{background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff;padding:12px 28px;border:none;border-radius:40px;font-weight:700;font-size:.9rem;cursor:pointer;transition:.2s;}
+  .submit-btn:hover{opacity:.85;transform:translateY(-2px);}
+  .back-home{display:inline-block;margin-top:30px;color:var(--purple);}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="page-header">
+    <h1>📬 Contact Us</h1>
+    <p style="color:var(--muted);margin-top:10px;">Have questions, feedback, or partnership ideas? We'd love to hear from you.</p>
+  </div>
+
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h2>Get in Touch</h2>
+      <div class="info-item">
+        <div class="info-icon">📧</div>
+        <div class="info-text">
+          <p>Email Us</p>
+          <p>support@bestdealhub.pk</p>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">⏰</div>
+        <div class="info-text">
+          <p>Response Time</p>
+          <p>We reply within 24-48 hours</p>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">💬</div>
+        <div class="info-text">
+          <p>Social Media</p>
+          <p>Follow us for daily deals and updates</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h2>Send a Message</h2>
+      <form action="#" method="post">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+          <label>Subject</label>
+          <input type="text" placeholder="What's this about?">
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea rows="5" placeholder="Write your message here..."></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message →</button>
+      </form>
+    </div>
+  </div>
+
+  <a href="index.html" class="back-home">← Back to Home</a>
+</div>
+
+</body>
+</html>
