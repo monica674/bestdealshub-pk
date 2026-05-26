@@ -3,698 +3,1238 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Best Deal Hub – Best Fashion & Home deals on Daraz Pakistan. Curated picks, honest reviews, and top-rated products.">
-<title>Best Deal Hub – Daraz Fashion & Home Deals</title>
+<meta name="description" content="Best Deal Hub – Pakistan's top Daraz affiliate site. Curated Fashion & Home deals with honest reviews, big discounts, and trusted products.">
+<meta name="keywords" content="Daraz Pakistan deals, women fashion Pakistan, home decor Pakistan, wall stickers, lawn suits, maxi dress, best deals Daraz">
+<meta property="og:title" content="Best Deal Hub – Best Daraz Deals in Pakistan">
+<meta property="og:description" content="Top fashion and home decor deals on Daraz Pakistan. Curated picks, big discounts, honest reviews.">
+<title>Best Deal Hub – Best Fashion & Home Deals on Daraz Pakistan</title>
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  body {
-    background: #0f1117;
-    color: #e8eaf6;
-    font-family: 'Segoe UI', system-ui, sans-serif;
-    line-height: 1.6;
-  }
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-  .navbar {
-    background: #12141f;
-    border-bottom: 1px solid #2e3250;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    padding: 0 24px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    overflow-x: auto;
-    height: 56px;
-    white-space: nowrap;
-  }
-  .navbar a {
-    color: #8b90b0;
-    font-size: 13px;
-    font-weight: 500;
-    white-space: nowrap;
-    transition: 0.2s;
-  }
-  .navbar a:hover, .navbar .logo {
-    color: #ff6b9d;
-  }
-  .navbar .logo {
-    font-weight: 700;
-    font-size: 16px;
-    margin-right: 10px;
-  }
-  .hero {
-    background: linear-gradient(135deg, #12141f 0%, #1a1040 50%, #1f1a2e 100%);
-    text-align: center;
-    padding: 60px 20px;
-  }
-  .hero h1 {
-    font-size: 2.5rem;
-    font-weight: 800;
-    background: linear-gradient(90deg, #ff6b9d, #c77dff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  .hero p {
-    max-width: 600px;
-    margin: 16px auto 0;
-    color: #8b90b0;
-  }
-  .stats {
-    display: flex;
-    justify-content: center;
-    gap: 32px;
-    margin-top: 32px;
-    flex-wrap: wrap;
-  }
-  .stat {
-    text-align: center;
-  }
-  .stat-number {
-    font-size: 28px;
-    font-weight: 800;
-    color: #c77dff;
-  }
-  .stat-label {
-    font-size: 12px;
-    color: #8b90b0;
-  }
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 24px;
-  }
-  section {
-    margin-bottom: 60px;
-    scroll-margin-top: 70px;
-  }
-  .section-title {
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
-    margin-bottom: 28px;
-    border-left: 4px solid #ff6b9d;
-    padding-left: 16px;
-  }
-  .section-title h2 {
-    font-size: 1.8rem;
-    font-weight: 700;
-  }
-  .section-title span {
-    color: #c77dff;
-    font-size: 0.9rem;
-  }
-  .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 24px;
-  }
-  .product-card {
-    background: #1a1d27;
-    border: 1px solid #2e3250;
-    border-radius: 16px;
-    overflow: hidden;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    border-color: #c77dff;
-  }
-  .product-img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    background: #0f1117;
-  }
-  .product-info {
-    padding: 18px;
-  }
-  .product-title {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 6px;
-    line-height: 1.4;
-  }
-  .rating {
-    color: #ffd166;
-    font-size: 0.85rem;
-    margin: 8px 0;
-  }
-  .reviews {
-    color: #8b90b0;
-    font-size: 0.7rem;
-    margin-left: 6px;
-  }
-  .price {
-    font-weight: 700;
-    color: #c77dff;
-    margin: 8px 0;
-  }
-  .btn {
-    display: block;
-    background: #ff6b9d;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    border-radius: 40px;
-    font-weight: 600;
-    font-size: 0.85rem;
-    margin-top: 12px;
-    transition: 0.2s;
-  }
-  .btn:hover {
-    background: #c77dff;
-    transform: translateY(-2px);
-  }
-  .product-badge {
-    display: inline-block;
-    background: rgba(199,125,255,0.15);
-    color: #c77dff;
-    font-size: 0.7rem;
-    padding: 2px 8px;
-    border-radius: 20px;
-    margin-bottom: 8px;
-  }
-  footer {
-    text-align: center;
-    padding: 30px;
-    border-top: 1px solid #2e3250;
-    color: #8b90b0;
-    font-size: 0.8rem;
-  }
-  @media (max-width: 640px) {
-    .container {
-      padding: 24px 16px;
-    }
-    .product-grid {
-      gap: 16px;
-    }
-    .navbar {
-      gap: 8px;
-    }
-    .navbar a {
-      font-size: 11px;
-    }
-  }
+:root {
+  --bg: #0d0f1a;
+  --bg2: #13162b;
+  --bg3: #1a1e35;
+  --border: #252a45;
+  --pink: #ff6b9d;
+  --purple: #c77dff;
+  --gold: #ffd166;
+  --text: #e2e6ff;
+  --muted: #7b80a8;
+  --card-bg: #161929;
+  --radius: 18px;
+  --shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;}
+
+/* ── NAVBAR ── */
+.navbar{
+  background:rgba(13,15,26,0.95);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:200;
+  display:flex;align-items:center;
+  padding:0 20px;height:60px;
+  gap:6px;
+}
+.nav-logo{
+  font-size:18px;font-weight:800;
+  background:linear-gradient(90deg,var(--pink),var(--purple));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  white-space:nowrap;margin-right:10px;flex-shrink:0;
+}
+.nav-links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1;}
+.nav-links::-webkit-scrollbar{display:none;}
+.nav-links a{
+  color:var(--muted);font-size:13px;font-weight:500;
+  padding:6px 12px;border-radius:30px;
+  white-space:nowrap;transition:.2s;flex-shrink:0;
+}
+.nav-links a:hover{color:#fff;background:rgba(199,125,255,0.12);}
+.nav-cta{
+  background:linear-gradient(135deg,var(--pink),var(--purple));
+  color:#fff!important;border-radius:30px!important;
+  padding:7px 16px!important;font-weight:700!important;
+  flex-shrink:0;margin-left:auto;
+}
+.nav-cta:hover{opacity:.85;background:linear-gradient(135deg,var(--pink),var(--purple))!important;}
+
+/* ── HERO SLIDER ── */
+.hero{position:relative;overflow:hidden;height:520px;}
+@media(max-width:640px){.hero{height:420px;}}
+.slides{display:flex;height:100%;transition:transform .6s cubic-bezier(.77,0,.18,1);}
+.slide{
+  min-width:100%;height:100%;
+  display:flex;align-items:center;justify-content:center;
+  flex-direction:column;text-align:center;padding:30px 20px;
+  position:relative;overflow:hidden;
+}
+.slide::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(160deg,rgba(13,15,26,.85) 0%,rgba(13,15,26,.5) 100%);
+  z-index:1;
+}
+.slide-bg{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;z-index:0;
+}
+.slide-content{position:relative;z-index:2;max-width:700px;margin:0 auto;}
+.slide-tag{
+  display:inline-block;
+  background:rgba(199,125,255,.18);
+  border:1px solid rgba(199,125,255,.35);
+  color:var(--purple);font-size:12px;font-weight:700;
+  padding:4px 14px;border-radius:30px;margin-bottom:14px;letter-spacing:.5px;
+}
+.slide h1{
+  font-size:clamp(1.6rem,4vw,3rem);font-weight:900;line-height:1.15;
+  background:linear-gradient(90deg,#fff,var(--purple));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  margin-bottom:14px;
+}
+.slide p{color:rgba(226,230,255,.75);font-size:clamp(.9rem,2vw,1.1rem);margin-bottom:24px;max-width:560px;}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{
+  background:linear-gradient(135deg,var(--pink),var(--purple));
+  color:#fff;padding:12px 28px;border-radius:40px;font-weight:700;font-size:.9rem;
+  transition:.2s;display:inline-block;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(199,125,255,.35);}
+.btn-outline{
+  border:2px solid rgba(255,255,255,.25);color:#fff;
+  padding:10px 24px;border-radius:40px;font-weight:600;font-size:.9rem;
+  transition:.2s;
+}
+.btn-outline:hover{border-color:var(--purple);background:rgba(199,125,255,.1);}
+
+/* slider nav */
+.slide-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);
+  background:rgba(255,255,255,.1);backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.15);
+  color:#fff;width:44px;height:44px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;z-index:10;font-size:18px;transition:.2s;
+  border:none;
+}
+.slide-arrow:hover{background:rgba(199,125,255,.35);}
+.slide-prev{left:16px;}
+.slide-next{right:16px;}
+.slide-dots{
+  position:absolute;bottom:18px;left:50%;transform:translateX(-50%);
+  display:flex;gap:8px;z-index:10;
+}
+.dot{
+  width:8px;height:8px;border-radius:50%;
+  background:rgba(255,255,255,.3);cursor:pointer;transition:.3s;border:none;
+}
+.dot.active{background:var(--purple);width:22px;border-radius:4px;}
+
+/* ── STATS BAR ── */
+.stats-bar{
+  background:var(--bg2);border-bottom:1px solid var(--border);
+  display:flex;justify-content:center;flex-wrap:wrap;gap:0;
+}
+.stat-item{
+  text-align:center;padding:20px 32px;
+  border-right:1px solid var(--border);
+}
+.stat-item:last-child{border-right:none;}
+.stat-num{font-size:1.7rem;font-weight:900;color:var(--purple);}
+.stat-lbl{font-size:.72rem;color:var(--muted);margin-top:2px;letter-spacing:.5px;text-transform:uppercase;}
+@media(max-width:500px){.stat-item{padding:14px 16px;}.stat-num{font-size:1.3rem;}}
+
+/* ── SECTIONS ── */
+.container{max-width:1240px;margin:0 auto;padding:48px 20px;}
+section{margin-bottom:70px;scroll-margin-top:72px;}
+.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:30px;flex-wrap:wrap;gap:12px;}
+.section-title-wrap{display:flex;align-items:baseline;gap:12px;}
+.section-line{width:5px;height:36px;background:linear-gradient(180deg,var(--pink),var(--purple));border-radius:3px;flex-shrink:0;}
+.section-title{font-size:1.65rem;font-weight:800;}
+.section-sub{color:var(--purple);font-size:.8rem;background:rgba(199,125,255,.12);padding:4px 12px;border-radius:20px;white-space:nowrap;}
+.view-all{
+  color:var(--purple);font-size:.85rem;font-weight:600;
+  border:1px solid rgba(199,125,255,.3);padding:7px 18px;border-radius:30px;
+  transition:.2s;white-space:nowrap;
+}
+.view-all:hover{background:rgba(199,125,255,.12);}
+
+/* ── PRODUCT GRID ── */
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+  gap:22px;
+}
+@media(max-width:480px){.product-grid{grid-template-columns:repeat(2,1fr);gap:12px;}}
+.product-card{
+  background:var(--card-bg);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  transition:transform .25s,box-shadow .25s,border-color .25s;
+  display:flex;flex-direction:column;
+}
+.product-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 16px 40px rgba(0,0,0,.5);
+  border-color:var(--purple);
+}
+.card-img-wrap{position:relative;overflow:hidden;}
+.product-img{width:100%;height:210px;object-fit:cover;display:block;background:#111;transition:transform .35s;}
+@media(max-width:480px){.product-img{height:160px;}}
+.product-card:hover .product-img{transform:scale(1.05);}
+.card-badge{
+  position:absolute;top:10px;left:10px;
+  background:rgba(13,15,26,.82);backdrop-filter:blur(6px);
+  border:1px solid rgba(255,107,157,.3);
+  color:var(--pink);font-size:.68rem;font-weight:700;
+  padding:3px 10px;border-radius:20px;
+}
+.card-wish{
+  position:absolute;top:10px;right:10px;
+  background:rgba(13,15,26,.75);border-radius:50%;
+  width:32px;height:32px;display:flex;align-items:center;justify-content:center;
+  font-size:15px;cursor:pointer;transition:.2s;
+  border:1px solid var(--border);
+}
+.card-wish:hover{background:rgba(255,107,157,.2);border-color:var(--pink);}
+.product-info{padding:16px;flex:1;display:flex;flex-direction:column;gap:6px;}
+.product-title{font-size:.88rem;font-weight:600;line-height:1.4;color:var(--text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.rating{color:var(--gold);font-size:.8rem;}
+.reviews{color:var(--muted);font-size:.7rem;margin-left:4px;}
+.price-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.price{font-weight:800;color:var(--purple);font-size:1rem;}
+.old-price{color:var(--muted);font-size:.75rem;text-decoration:line-through;}
+.discount{background:rgba(255,107,157,.15);color:var(--pink);font-size:.68rem;font-weight:700;padding:2px 7px;border-radius:10px;}
+.card-btn{
+  display:block;
+  background:linear-gradient(135deg,var(--pink),var(--purple));
+  color:#fff;text-align:center;padding:10px;
+  border-radius:40px;font-weight:700;font-size:.8rem;
+  margin-top:auto;transition:.2s;letter-spacing:.3px;
+}
+.card-btn:hover{opacity:.88;transform:translateY(-2px);box-shadow:0 6px 20px rgba(199,125,255,.3);}
+@media(max-width:480px){.product-info{padding:10px;}.card-btn{padding:8px;font-size:.75rem;}}
+
+/* ── BLOG SECTION ── */
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px;}
+.blog-card{
+  background:var(--card-bg);border:1px solid var(--border);
+  border-radius:var(--radius);overflow:hidden;transition:.25s;
+}
+.blog-card:hover{transform:translateY(-5px);border-color:var(--purple);box-shadow:var(--shadow);}
+.blog-img-wrap{height:180px;overflow:hidden;}
+.blog-img{width:100%;height:100%;object-fit:cover;transition:.35s;}
+.blog-card:hover .blog-img{transform:scale(1.06);}
+.blog-info{padding:18px;}
+.blog-cat{display:inline-block;background:rgba(199,125,255,.15);color:var(--purple);font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:10px;letter-spacing:.3px;}
+.blog-title{font-size:.98rem;font-weight:700;line-height:1.4;margin-bottom:8px;}
+.blog-excerpt{color:var(--muted);font-size:.82rem;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.blog-meta{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:.73rem;color:var(--muted);}
+
+/* ── TRUST STRIP ── */
+.trust-strip{
+  background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:30px 20px;
+}
+.trust-inner{
+  max-width:1240px;margin:0 auto;
+  display:flex;justify-content:center;gap:40px;flex-wrap:wrap;
+}
+.trust-item{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:.85rem;}
+.trust-icon{font-size:1.4rem;}
+
+/* ── NEWSLETTER ── */
+.newsletter{
+  background:linear-gradient(135deg,rgba(199,125,255,.1),rgba(255,107,157,.1));
+  border:1px solid rgba(199,125,255,.2);
+  border-radius:24px;padding:48px 32px;text-align:center;
+  margin:0 20px 60px;max-width:1200px;margin-left:auto;margin-right:auto;
+}
+.newsletter h2{font-size:1.8rem;font-weight:800;margin-bottom:10px;}
+.newsletter p{color:var(--muted);margin-bottom:24px;}
+.nl-form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.nl-input{
+  background:var(--bg3);border:1px solid var(--border);color:var(--text);
+  padding:12px 20px;border-radius:40px;font-size:.9rem;
+  outline:none;width:280px;max-width:100%;
+}
+.nl-input:focus{border-color:var(--purple);}
+.nl-btn{
+  background:linear-gradient(135deg,var(--pink),var(--purple));
+  color:#fff;padding:12px 28px;border-radius:40px;font-weight:700;
+  font-size:.9rem;border:none;cursor:pointer;transition:.2s;
+}
+.nl-btn:hover{opacity:.85;transform:translateY(-2px);}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--bg2);border-top:1px solid var(--border);
+  padding:60px 20px 30px;
+}
+.footer-grid{
+  max-width:1240px;margin:0 auto;
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;
+  margin-bottom:50px;
+}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr;gap:30px;}}
+@media(max-width:500px){.footer-grid{grid-template-columns:1fr;gap:24px;}}
+.footer-logo{
+  font-size:1.5rem;font-weight:900;
+  background:linear-gradient(90deg,var(--pink),var(--purple));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  margin-bottom:14px;display:block;
+}
+.footer-desc{color:var(--muted);font-size:.85rem;line-height:1.7;margin-bottom:18px;}
+.social-links{display:flex;gap:10px;}
+.social-btn{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--bg3);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:15px;transition:.2s;cursor:pointer;
+}
+.social-btn:hover{border-color:var(--purple);background:rgba(199,125,255,.15);}
+.footer-col h4{font-size:.9rem;font-weight:700;margin-bottom:16px;color:var(--text);}
+.footer-links{display:flex;flex-direction:column;gap:9px;}
+.footer-links a{color:var(--muted);font-size:.83rem;transition:.2s;}
+.footer-links a:hover{color:var(--pink);padding-left:4px;}
+.footer-bottom{
+  max-width:1240px;margin:0 auto;
+  border-top:1px solid var(--border);padding-top:24px;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
+}
+.footer-bottom p{color:var(--muted);font-size:.78rem;}
+.footer-bottom-links{display:flex;gap:16px;}
+.footer-bottom-links a{color:var(--muted);font-size:.78rem;transition:.2s;}
+.footer-bottom-links a:hover{color:var(--pink);}
+.affiliate-note{
+  max-width:1240px;margin:16px auto 0;
+  background:rgba(199,125,255,.06);border:1px solid rgba(199,125,255,.15);
+  border-radius:10px;padding:12px 20px;
+  color:var(--muted);font-size:.75rem;line-height:1.6;text-align:center;
+}
 </style>
 </head>
 <body>
 
-<div class="navbar">
-  <span class="logo">🛍️ Best Deal Hub</span>
-  <a href="#fashion">👕 Fashion & Clothing</a>
-  <a href="#home-living">🏡 Home & Living</a>
-  <a href="#blog">📝 Blog</a>
+<!-- ═══════════════ NAVBAR ═══════════════ -->
+<nav class="navbar">
+  <span class="nav-logo">🛍️ Best Deal Hub</span>
+  <div class="nav-links">
+    <a href="#fashion">👕 Fashion</a>
+    <a href="#home-living">🏡 Home & Living</a>
+    <a href="blog-fashion-guide.html">💡 Fashion Guide</a>
+    <a href="blog-home-decor.html">🏠 Home Decor Tips</a>
+    <a href="top-picks.html">🏆 Top Picks</a>
+    <a href="size-guide.html">📐 Size Guide</a>
+    <a href="deals.html">🔥 Hot Deals</a>
+    <a href="#blog">📝 Blog</a>
+  </div>
+  <a href="#fashion" class="nav-links nav-cta">Shop Now</a>
+</nav>
+
+<!-- ═══════════════ HERO SLIDER ═══════════════ -->
+<div class="hero" id="hero">
+  <div class="slides" id="slides">
+
+    <!-- Slide 1 -->
+    <div class="slide">
+      <img class="slide-bg" src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=1400&q=80" alt="Fashion Sale">
+      <div class="slide-content">
+        <div class="slide-tag">🔥 UP TO 67% OFF TODAY</div>
+        <h1>Pakistan's Best Fashion Deals on Daraz</h1>
+        <p>Handpicked women's dresses, suits & gowns at prices that feel like a gift. 1,000+ sold every day.</p>
+        <div class="hero-btns">
+          <a href="#fashion" class="btn-primary">Browse Fashion →</a>
+          <a href="#home-living" class="btn-outline">Home Decor</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide">
+      <img class="slide-bg" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1400&q=80" alt="Home Decor">
+      <div class="slide-content">
+        <div class="slide-tag">🏡 HOME MAKEOVER DEALS</div>
+        <h1>Transform Your Home for Under PKR 500</h1>
+        <p>Beautiful 3D wall stickers, butterfly mirrors, and premium decor. 38,000+ sold — Pakistan loves these!</p>
+        <div class="hero-btns">
+          <a href="#home-living" class="btn-primary">Shop Home Decor →</a>
+          <a href="blog-home-decor.html" class="btn-outline">Decor Tips</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide">
+      <img class="slide-bg" src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=1400&q=80" alt="Summer Collection">
+      <div class="slide-content">
+        <div class="slide-tag">☀️ SUMMER COLLECTION 2025</div>
+        <h1>Stay Cool, Stay Stylish This Season</h1>
+        <p>Printed lawn suits, embroidered gowns & maxi dresses. Free shipping on select items!</p>
+        <div class="hero-btns">
+          <a href="#fashion" class="btn-primary">Shop Summer Picks →</a>
+          <a href="blog-fashion-guide.html" class="btn-outline">Style Guide</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="slide">
+      <img class="slide-bg" src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1400&q=80" alt="Interior Decor">
+      <div class="slide-content">
+        <div class="slide-tag">✨ EDITOR'S TOP PICKS</div>
+        <h1>Curated Deals. Honest Reviews. Real Savings.</h1>
+        <p>Every product on Best Deal Hub is hand-tested and highly rated by real buyers across Pakistan.</p>
+        <div class="hero-btns">
+          <a href="top-picks.html" class="btn-primary">See Top Picks →</a>
+          <a href="deals.html" class="btn-outline">Hot Deals</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 5 -->
+    <div class="slide">
+      <img class="slide-bg" src="https://images.unsplash.com/photo-1543087903-1ac2364bde00?w=1400&q=80" alt="Deals">
+      <div class="slide-content">
+        <div class="slide-tag">💜 5-8% DARAZ COMMISSION</div>
+        <h1>High-Commission Picks, Maximum Value</h1>
+        <p>Fashion earns 5–8% commission. Home earns 4–7%. We pick only the best converting products for you.</p>
+        <div class="hero-btns">
+          <a href="#fashion" class="btn-primary">Explore All Deals →</a>
+          <a href="#blog" class="btn-outline">Read Our Blog</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <button class="slide-arrow slide-prev" onclick="changeSlide(-1)">&#8592;</button>
+  <button class="slide-arrow slide-next" onclick="changeSlide(1)">&#8594;</button>
+  <div class="slide-dots" id="dots"></div>
 </div>
 
-<div class="hero">
-  <h1>Best Fashion & Home Deals on Daraz Pakistan</h1>
-  <p>Curated picks. Honest reviews. High-commission categories. All in one place.</p>
-  <div class="stats">
-    <div class="stat"><div class="stat-number">5-8%</div><div class="stat-label">Fashion Commission</div></div>
-    <div class="stat"><div class="stat-number">4-7%</div><div class="stat-label">Home & Living Commission</div></div>
-    <div class="stat"><div class="stat-number">Top Picks</div><div class="stat-label">1,000+ Sales Each</div></div>
+<!-- ═══════════════ STATS BAR ═══════════════ -->
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-num">40+</div><div class="stat-lbl">Curated Products</div></div>
+  <div class="stat-item"><div class="stat-num">5–8%</div><div class="stat-lbl">Fashion Commission</div></div>
+  <div class="stat-item"><div class="stat-num">4–7%</div><div class="stat-lbl">Home Commission</div></div>
+  <div class="stat-item"><div class="stat-num">38K+</div><div class="stat-lbl">Best-Seller Sold</div></div>
+  <div class="stat-item"><div class="stat-num">67%</div><div class="stat-lbl">Max Discount</div></div>
+</div>
+
+<!-- ═══════════════ TRUST STRIP ═══════════════ -->
+<div class="trust-strip">
+  <div class="trust-inner">
+    <div class="trust-item"><span class="trust-icon">✅</span> Hand-Verified Products</div>
+    <div class="trust-item"><span class="trust-icon">🚚</span> Fast Daraz Delivery</div>
+    <div class="trust-item"><span class="trust-icon">💬</span> Real Buyer Reviews</div>
+    <div class="trust-item"><span class="trust-icon">🔒</span> Secure Daraz Checkout</div>
+    <div class="trust-item"><span class="trust-icon">💰</span> Best Price Guarantee</div>
   </div>
 </div>
 
+<!-- ═══════════════ MAIN CONTENT ═══════════════ -->
 <div class="container">
 
-  <!-- ==================== FASHION & CLOTHING ==================== -->
+  <!-- ══ FASHION SECTION ══ -->
   <section id="fashion">
-    <div class="section-title">
-      <h2>👕 Fashion & Clothing</h2>
-      <span>5-8% Commission • High Demand • Top Sellers</span>
+    <div class="section-head">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <div class="section-line"></div>
+        <div>
+          <div class="section-title">👕 Fashion & Clothing</div>
+          <div style="color:var(--muted);font-size:.82rem;margin-top:3px;">5–8% Commission &nbsp;•&nbsp; High Demand &nbsp;•&nbsp; Daily Best-Sellers</div>
+        </div>
+      </div>
+      <span class="section-sub">20 Top Picks</span>
     </div>
     <div class="product-grid">
-      <!-- Product 1 -->
+
+      <!-- P1 -->
       <div class="product-card">
-        <img class="product-img" src="https://i.ibb.co/4RB7bNwd/Sdfb97d5a4294453a956bc5146517e6d65.jpg" alt="Printed 2pc Dress">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/4RB7bNwd/Sdfb97d5a4294453a956bc5146517e6d65.jpg" alt="Samar's Fashion Printed 2pc Dress" loading="lazy">
+          <div class="card-badge">🔥 1.6K+ Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
         <div class="product-info">
-          <div class="product-badge">🔥 1.6K+ Sold</div>
           <div class="product-title">Samar's Fashion Summer Trendy Printed 2pc Dress for Women</div>
           <div class="rating">★★★★★ <span class="reviews">(394 reviews)</span></div>
-          <div class="price">PKR 999 <span style="font-size:0.7rem; color:#8b90b0;">(67% off)</span></div>
-          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2Fi143150814-s1917405952.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+          <div class="price-row"><span class="price">PKR 999</span><span class="old-price">PKR 3,000</span><span class="discount">67% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2Fi143150814-s1917405952.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
         </div>
       </div>
-      <!-- Product 2 -->
+
+      <!-- P2 -->
       <div class="product-card">
-        <img class="product-img" src="https://i.ibb.co/Gvh36t9h/8c69013a29c78557742e90a48455e26c-p.webp" alt="Embroidered Flower Gown">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/Gvh36t9h/8c69013a29c78557742e90a48455e26c-p.webp" alt="Embroidered Flower Gown 3Pc" loading="lazy">
+          <div class="card-badge">⭐ 8.3K Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
         <div class="product-info">
-          <div class="product-badge">⭐ 8.3K Sold</div>
           <div class="product-title">Stylish Collection Stitched Embroidered Flower Gown 3Pc Dress</div>
           <div class="rating">★★★★★ <span class="reviews">(1,798 reviews)</span></div>
-          <div class="price">PKR 1,423 <span style="font-size:0.7rem; color:#8b90b0;">(54% off)</span></div>
-          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2Fi243378931-s2595897960.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+          <div class="price-row"><span class="price">PKR 1,423</span><span class="old-price">PKR 3,100</span><span class="discount">54% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2Fi243378931-s2595897960.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
         </div>
       </div>
-      <!-- Product 3 -->
+
+      <!-- P3 -->
       <div class="product-card">
-        <img class="product-img" src="https://i.ibb.co/svrZwSK5/21f22c9048bc3b272bd308a3933adaf6.jpg" alt="Printed Maxi Dress">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/svrZwSK5/21f22c9048bc3b272bd308a3933adaf6.jpg" alt="Printed 3-Piece Maxi Dress" loading="lazy">
+          <div class="card-badge">🌟 5.8K Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
         <div class="product-info">
-          <div class="product-badge">🌟 5.8K Sold</div>
           <div class="product-title">Stylish Collection Stitched Printed 3-Piece Maxi Dress</div>
           <div class="rating">★★★★★ <span class="reviews">(1,581 reviews)</span></div>
-          <div class="price">PKR 1,564 <span style="font-size:0.7rem; color:#8b90b0;">(50% off)</span></div>
-          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2Fi436340374-s2629132387.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+          <div class="price-row"><span class="price">PKR 1,564</span><span class="old-price">PKR 3,100</span><span class="discount">50% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2Fi436340374-s2629132387.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
         </div>
       </div>
-      <!-- Product 4 -->
+
+      <!-- P4 -->
       <div class="product-card">
-        <img class="product-img" src="https://i.ibb.co/mVXCR5RD/S7e5675dbb7af4b6a8a5676cc70b2d79c-G.png" alt="Leaf Print Dress">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/mVXCR5RD/S7e5675dbb7af4b6a8a5676cc70b2d79c-G.png" alt="Leaf Print Linen 2pc Dress" loading="lazy">
+          <div class="card-badge">🍃 1.2K Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
         <div class="product-info">
-          <div class="product-badge">🍃 1.2K Sold</div>
           <div class="product-title">Trendy Leaf Print Linen 2pc Dress for Women</div>
           <div class="rating">★★★★★ <span class="reviews">(351 reviews)</span></div>
-          <div class="price">PKR 999 <span style="font-size:0.7rem; color:#8b90b0;">(50% off)</span></div>
-          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2Fi404994561-s2381999254.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+          <div class="price-row"><span class="price">PKR 999</span><span class="old-price">PKR 2,000</span><span class="discount">50% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2Fi404994561-s2381999254.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
         </div>
       </div>
-      <!-- Product 5 (Your Embroidered Flower Gown) -->
+
+      <!-- P5 -->
       <div class="product-card">
-        <img class="product-img" src="https://i.ibb.co/KxjDwJDh/adafc75f999c37e5731f2a5d12178242-jpg-400x400q75.avif" alt="Embroidered Flower Gown 3Pc Dress for Women">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/KxjDwJDh/adafc75f999c37e5731f2a5d12178242-jpg-400x400q75.avif" alt="Embroidered Flower Gown 3Pc Variant" loading="lazy">
+          <div class="card-badge">⭐ 8.3K Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
         <div class="product-info">
-          <div class="product-badge">⭐ 8.3K Sold</div>
           <div class="product-title">Embroidered Flower Gown – Stitched 3Pc Dress for Women</div>
           <div class="rating">★★★★★ <span class="reviews">(1,798 reviews)</span></div>
-          <div class="price">PKR 1,423 <span style="font-size:0.7rem; color:#8b90b0;">(54% off)</span></div>
-          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F3-i432234385-s2390313433.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+          <div class="price-row"><span class="price">PKR 1,423</span><span class="old-price">PKR 3,100</span><span class="discount">54% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F3-i432234385-s2390313433.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
         </div>
       </div>
-      <!-- Product 6 -->
-      <div class="product-card">
-  <img class="product-img" src="https://i.ibb.co/CpnH5FVw/S4b78739c77c84ae58d3eb1aed0db52788.png" alt="Samar's Fashion Summer Trendy Multicolor Printed 2pc Dress for Women">
-  <div class="product-info">
-    <div class="product-badge">🔥 1.6K Sold</div>
-    <div class="product-title">Samar's Fashion Summer Trendy Printed 2pc Dress for Women & Girls</div>
-    <div class="rating">★★★★★ <span class="reviews">(394 reviews)</span></div>
-    <div class="price">PKR 999 <span style="font-size:0.7rem; color:#8b90b0;">(67% off)</span></div>
-    <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2Fsamars-fashion-summer-trendy-new-arrival-stitched-fashionable-multicolor-printed-2pc-dress-for-women-and-young-girls-i675540240-s3187154863.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
-  </div>
-</div>
-      <!-- Product 7 -->
-      <div class="product-card">
-  <img class="product-img" src="https://i.ibb.co/N2nwwvs2/17540b7056c0d1e54dd504cc1f2d3d00.png" alt="Stylish Collection Multicolor Stitched Trendy Printed 2 Piece Suit for Women">
-  <div class="product-info">
-    <div class="product-badge">⭐ 1.6K Sold</div>
-    <div class="product-title">Stylish Collection Printed 2 Piece Suit for Women – Round Premium Linen Floral O-Neck</div>
-    <div class="rating">★★★★☆ <span class="reviews">(384 reviews)</span></div>
-    <div class="price">PKR 976 <span style="font-size:0.7rem; color:#8b90b0;">(62% off – was PKR 2,600)</span></div>
-    <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F2-i550981701-s2565858363.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
-  </div>
-</div>
-<!-- Product 8 -->
 
-     <div class="product-card">
-  <img class="product-img" src="https://i.ibb.co/yFvKZYHv/56b537f7eaaa3d6dfd1abf396f749f34.jpg" alt="Star Garnet Dot Net Fancy Button Long Maxi Dress for Women">
-  <div class="product-info">
-    <div class="product-badge">⭐ 941 Sold</div>
-    <div class="product-title">Star Garnet Dot Net Fancy Button Long Maxi Dress for Girls/Women – Trendy & Elegant</div>
-    <div class="rating">★★★★★ <span class="reviews">(242 reviews)</span></div>
-    <div class="price">PKR 1,299 <span style="font-size:0.7rem; color:#8b90b0;">(28% off – was PKR 1,799)</span></div>
-    <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2Fstar-garnet-dot-net-fancy-button-long-maxi-dress-for-girlswomen-trendy-and-elegant-i362065514-s1812002140.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
-  </div>
-</div>
-     <!-- Product 9 -->
-     <div class="product-card">
-  <img class="product-img" src="https://i.ibb.co/FNvjXtg/8fd67f52d2d98ad50b44acfa1127b835.jpg" alt="Dealistaan Multicolor Silk Maxi Dress with Koti">
-  <div class="product-info">
-    <div class="product-badge">🔥 10K+ Sold</div>
-    <div class="product-title">Dealistaan Multicolor Silk Maxi Dress – Heavy Embroidered Stitched Long Wear Dress with Koti (Dec-002)</div>
-    <div class="rating">★★★★★ <span class="reviews">(3,058 reviews)</span></div>
-    <div class="price">PKR 1,299 <span style="font-size:0.7rem; color:#8b90b0;">(68% off – was PKR 4,000)</span></div>
-    <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F002-i265179902-s4005389048.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
-  </div>
-</div>
-     <!-- Product 10 -->
-     <div class="product-card">
-  <img class="product-img" src="https://i.ibb.co/W4jSB1hQ/d3819bc41f6a2770f59caade4040f3c4.jpg" alt="Smar's Fashion Trendy Stitched Saleeha Printed 2pc Dress for Women and Girls">
-  <div class="product-info">
-    <div class="product-badge">🔥 3K+ Sold</div>
-    <div class="product-title">Smar's Fashion Trendy Stitched Saleeha Printed 2pc Dress for Women and Girls</div>
-    <div class="rating">★★★★★ <span class="reviews">(698 reviews)</span></div>
-    <div class="price">PKR 1,180 <span style="font-size:0.7rem; color:#8b90b0;">(61% off – was PKR 3,000)</span></div>
-    <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F2-i471284668-s2394547731.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
-  </div>
-</div>
-     <!-- Product 11-->
-     <div class="product-card">
-  <img class="product-img" src="https://i.ibb.co/wZFnjHKQ/6b2dfb12cc8b4953b2bd01d294f9ff09.png" alt="Stylish Collection Stitched 2pc Dress for Women and Girls">
-  <div class="product-info">
-    <div class="product-badge">🔥 7.2K Sold</div>
-    <div class="product-title">Stylish Collection Stitched 2pc Dress for Women – Stitched Suit for Girls & Women</div>
-    <div class="rating">★★★★☆ <span class="reviews">(1,844 reviews)</span></div>
-    <div class="price">PKR 1,000 <span style="font-size:0.7rem; color:#8b90b0;">(52% off – was PKR 2,100)</span></div>
-    <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F2-i422999967-s2415330180.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
-  </div>
-</div>
-      <!-- Product 12-->
-     <div class="product-card">
-  <img class="product-img" src="https://i.ibb.co/v4HJVqfn/b3fdbcbf1bcec479f83faee860cdeacb.jpg" alt="Stylish Collection Unique 3D Stitched Block Printed 2pc Dress for Women and Girls">
-  <div class="product-info">
-    <div class="product-badge">🔥 1.7K Sold</div>
-    <div class="product-title">Stylish Collection Unique 3D Stitched Block Printed 2pc Dress for Women – Stitched Suit for Girls & Women</div>
-    <div class="rating">★★★★☆ <span class="reviews">(417 reviews)</span></div>
-    <div class="price">PKR 1,000 <span style="font-size:0.7rem; color:#8b90b0;">(52% off – was PKR 2,100)</span></div>
-    <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F3d-2-i366305661-s2415336105.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
-  </div>
-</div>
-     <!-- Product 13-->
-     <div class="product-card">
-  <img class="product-img" src="https://i.ibb.co/rRr2NNyY/22ad97b954b6258375fcc4accdf26add.jpg" alt="Stylish Collection Stitched Sparrow Print 2Pc Dress for Women and Girls">
-  <div class="product-info">
-    <div class="product-badge">🔥 6.4K Sold</div>
-    <div class="product-title">Stylish Collection Stitched Sparrow Print 2Pc Dress for Women – Stitched Suit for Girls & Women</div>
-    <div class="rating">★★★★☆ <span class="reviews">(1,831 reviews)</span></div>
-    <div class="price">PKR 1,000 <span style="font-size:0.7rem; color:#8b90b0;">(52% off – was PKR 2,100)</span></div>
-    <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F2-i430609770-s2395344578.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
-  </div>
-</div>
-      <!-- Product 14-->
-     <div class="product-card">
-  <img class="product-img" src="https://i.ibb.co/7xFt5Ln7/6be64361bda3139441f5aae7c7d332a3-jpg.webp" alt="Stylish Collection Stitched New Arrival Printed 2pc Dress for Women and Girls">
-  <div class="product-info">
-    <div class="product-badge">🔥 2.3K Sold</div>
-    <div class="product-title">Stylish Collection Stitched New Arrival Printed 2pc Dress for Women – Stitched Suit for Girls & Women</div>
-    <div class="rating">★★★★☆ <span class="reviews">(486 reviews)</span></div>
-    <div class="price">PKR 1,000 <span style="font-size:0.7rem; color:#8b90b0;">(52% off – was PKR 2,100)</span></div>
-    <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F2-i488721896-s2415322770.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
-  </div>
-</div>
-      <!-- Product 15-->
-     <div class="product-card">
-  <img class="product-img" src="https://i.ibb.co/Ppy8sgW/6a1fd3ab80fe7d23599c367a90e76795.jpg" alt="Elegant Women's Maxi Dress - Long, Flowing, Stylish Maxi Gown for Any Occasion">
-  <div class="product-info">
-    <div class="product-badge">⭐ 1K+ Sold</div>
-    <div class="product-title">Elegant Women's Maxi Dress – Long, Flowing, Stylish Maxi Gown for Any Occasion</div>
-    <div class="rating">★★★★★ <span class="reviews">(238 reviews)</span></div>
-    <div class="price">PKR 1,899 <span style="font-size:0.7rem; color:#8b90b0;">(46% off – was PKR 3,500)</span></div>
-    <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2Felegant-womens-maxi-dress-long-flowing-and-stylish-maxi-gown-for-any-occasion-comfortable-fabric-flattering-fit-and-vibrant-colors-perfect-for-parties-weddings-and-casual-wear-available-in-various-sizes-shop-now-on-daraz-i535163889-s3420358222.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
-  </div>
-</div>
-     <!-- Product 16-->
-     <div class="product-card">
-  <img class="product-img" src="https://i.ibb.co/1Y7B8tjB/09860f1b58d614fc92bc2119640ba400.png" alt="Smar's Fashion Women's Printed Multicolor Stitched Lawn 2 Piece Suit - Shirt & Trouser Set">
-  <div class="product-info">
-    <div class="product-badge">🔥 2.2K Sold</div>
-    <div class="product-title">Smar's Fashion Women's Printed Multicolor Stitched Lawn 2 Piece Suit – Shirt & Trouser Set</div>
-    <div class="rating">★★★★★ <span class="reviews">(568 reviews)</span></div>
-    <div class="price">PKR 999 <span style="font-size:0.7rem; color:#8b90b0;">(50% off – was PKR 2,000)</span></div>
-    <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F2-i426692478-s2272539979.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
-  </div>
-</div>
-     <!-- Product 17-->
-     <div class="product-card">
-  <img class="product-img" src="https://i.ibb.co/SD9MLLXw/h1.png" alt="Stylish Collection Linen 2pc Dress - 3D Printed Jacket Style Suit for Women">
-  <div class="product-info">
-    <div class="product-badge">🔥 2.9K Sold</div>
-    <div class="product-title">Stylish Collection Linen 2pc Dress for Women – All Season Stitched 3D Printed Jacket Style Suit</div>
-    <div class="rating">★★★★★ <span class="reviews">(630 reviews)</span></div>
-    <div class="price">PKR 1,000 <span style="font-size:0.7rem; color:#8b90b0;">(52% off – was PKR 2,100)</span></div>
-    <div class="colors">🎨 Colors: White, Black, Blue, Maroon</div>
-    <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F2-3d-i432135431-s2386686076.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
-  </div>
-</div>
-     <!-- Product 18-->
-     <div class="product-card">
-  <img class="product-img" src="https://i.ibb.co/R4vz4mXn/5b57b788d2d8cc1f012f5190f3f6beb5.png" alt="Stylish Collection Stitched Printed Fancy 2pc Dress for Women and Girls">
-  <div class="product-info">
-    <div class="product-badge">🔥 2.8K Sold</div>
-    <div class="product-title">Stylish Collection Stitched Printed Fancy 2pc Dress for Women – Stitched Suit for Girls & Women</div>
-    <div class="rating">★★★☆☆ <span class="reviews">(660 reviews)</span></div>
-    <div class="price">PKR 1,560 <span style="font-size:0.7rem; color:#8b90b0;">(50% off – was PKR 3,100)</span></div>
-    <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F2-i430775656-s2393961808.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
-  </div>
-</div>
-     <!-- Product 19-->
-     <div class="product-card">
-  <img class="product-img" src="https://i.ibb.co/fdRFGVCk/9c5a4b6334d454365c4c2f26e9240483.png" alt="Stylish Collection Leaf Print Linen 2PC Stitched Dress for Women">
-  <div class="product-info">
-    <div class="product-badge">🔥 9.9K Sold</div>
-    <div class="product-title">Stylish Collection Leaf Print Linen 2PC Stitched Dress for Women – Summer Collection, Multiple Colors</div>
-    <div class="rating">★★★★☆ <span class="reviews">(2,379 reviews)</span></div>
-    <div class="price">PKR 1,000 <span style="font-size:0.7rem; color:#8b90b0;">(52% off – was PKR 2,100)</span></div>
-    <div class="colors">🎨 Multiple Colors Available</div>
-    <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F2-i434919136-s2372303552.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
-  </div>
-</div>
-      <!-- Product 20-->
-     <div class="product-card">
-  <img class="product-img" src="https://i.ibb.co/TBw26kwx/f2554731cfb3a6c0a2aefb89a6bbc231.png" alt="Dealistaan Stitched Embroidered Floral Coaty with Maxi 2Pc Dress for Women">
-  <div class="product-info">
-    <div class="product-badge">🔥 1.9K Sold</div>
-    <div class="product-title">Dealistaan Stitched Embroidered Floral Coaty with Maxi 2Pc Dress for Women</div>
-    <div class="rating">★★★★☆ <span class="reviews">(544 reviews)</span></div>
-    <div class="price">PKR 1,399 <span style="font-size:0.7rem; color:#8b90b0;">(67% off – was PKR 4,200)</span></div>
-    <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F2-i397090351-s4005391162.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
-  </div>
-</div>
-     
+      <!-- P6 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/CpnH5FVw/S4b78739c77c84ae58d3eb1aed0db52788.png" alt="Samar's Multicolor Printed 2pc Dress" loading="lazy">
+          <div class="card-badge">🔥 1.6K Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">Samar's Fashion Summer Trendy Printed 2pc Dress for Women & Girls</div>
+          <div class="rating">★★★★★ <span class="reviews">(394 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 999</span><span class="old-price">PKR 3,000</span><span class="discount">67% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2Fsamars-fashion-summer-trendy-new-arrival-stitched-fashionable-multicolor-printed-2pc-dress-for-women-and-young-girls-i675540240-s3187154863.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+      <!-- P7 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/N2nwwvs2/17540b7056c0d1e54dd504cc1f2d3d00.png" alt="Printed 2 Piece Suit O-Neck" loading="lazy">
+          <div class="card-badge">⭐ 1.6K Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">Stylish Collection Printed 2 Piece Suit – Round Premium Linen Floral O-Neck</div>
+          <div class="rating">★★★★☆ <span class="reviews">(384 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 976</span><span class="old-price">PKR 2,600</span><span class="discount">62% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F2-i550981701-s2565858363.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+      <!-- P8 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/yFvKZYHv/56b537f7eaaa3d6dfd1abf396f749f34.jpg" alt="Star Garnet Fancy Maxi Dress" loading="lazy">
+          <div class="card-badge">⭐ 941 Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">Star Garnet Dot Net Fancy Button Long Maxi Dress for Girls/Women</div>
+          <div class="rating">★★★★★ <span class="reviews">(242 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 1,299</span><span class="old-price">PKR 1,799</span><span class="discount">28% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2Fstar-garnet-dot-net-fancy-button-long-maxi-dress-for-girlswomen-trendy-and-elegant-i362065514-s1812002140.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+      <!-- P9 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/FNvjXtg/8fd67f52d2d98ad50b44acfa1127b835.jpg" alt="Dealistaan Silk Maxi with Koti" loading="lazy">
+          <div class="card-badge">🔥 10K+ Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">Dealistaan Multicolor Silk Maxi Dress – Heavy Embroidered with Koti (Dec-002)</div>
+          <div class="rating">★★★★★ <span class="reviews">(3,058 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 1,299</span><span class="old-price">PKR 4,000</span><span class="discount">68% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F002-i265179902-s4005389048.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+      <!-- P10 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/W4jSB1hQ/d3819bc41f6a2770f59caade4040f3c4.jpg" alt="Smar's Saleeha Printed 2pc Dress" loading="lazy">
+          <div class="card-badge">🔥 3K+ Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">Smar's Fashion Trendy Stitched Saleeha Printed 2pc Dress for Women</div>
+          <div class="rating">★★★★★ <span class="reviews">(698 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 1,180</span><span class="old-price">PKR 3,000</span><span class="discount">61% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F2-i471284668-s2394547731.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+      <!-- P11 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/wZFnjHKQ/6b2dfb12cc8b4953b2bd01d294f9ff09.png" alt="Stitched 2pc Dress for Women" loading="lazy">
+          <div class="card-badge">🔥 7.2K Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">Stylish Collection Stitched 2pc Dress for Women & Girls</div>
+          <div class="rating">★★★★☆ <span class="reviews">(1,844 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 1,000</span><span class="old-price">PKR 2,100</span><span class="discount">52% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F2-i422999967-s2415330180.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+      <!-- P12 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/v4HJVqfn/b3fdbcbf1bcec479f83faee860cdeacb.jpg" alt="3D Block Printed 2pc Dress" loading="lazy">
+          <div class="card-badge">🔥 1.7K Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">Stylish Collection Unique 3D Stitched Block Printed 2pc Dress for Women</div>
+          <div class="rating">★★★★☆ <span class="reviews">(417 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 1,000</span><span class="old-price">PKR 2,100</span><span class="discount">52% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F3d-2-i366305661-s2415336105.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+      <!-- P13 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/rRr2NNyY/22ad97b954b6258375fcc4accdf26add.jpg" alt="Sparrow Print 2Pc Dress" loading="lazy">
+          <div class="card-badge">🔥 6.4K Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">Stylish Collection Stitched Sparrow Print 2Pc Dress for Women</div>
+          <div class="rating">★★★★☆ <span class="reviews">(1,831 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 1,000</span><span class="old-price">PKR 2,100</span><span class="discount">52% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F2-i430609770-s2395344578.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+      <!-- P14 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/7xFt5Ln7/6be64361bda3139441f5aae7c7d332a3-jpg.webp" alt="New Arrival Printed 2pc Dress" loading="lazy">
+          <div class="card-badge">🔥 2.3K Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">Stylish Collection New Arrival Printed 2pc Dress for Women</div>
+          <div class="rating">★★★★☆ <span class="reviews">(486 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 1,000</span><span class="old-price">PKR 2,100</span><span class="discount">52% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F2-i488721896-s2415322770.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+      <!-- P15 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/Ppy8sgW/6a1fd3ab80fe7d23599c367a90e76795.jpg" alt="Elegant Maxi Gown" loading="lazy">
+          <div class="card-badge">⭐ 1K+ Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">Elegant Women's Maxi Dress – Flowing Stylish Gown for Any Occasion</div>
+          <div class="rating">★★★★★ <span class="reviews">(238 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 1,899</span><span class="old-price">PKR 3,500</span><span class="discount">46% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2Felegant-womens-maxi-dress-long-flowing-and-stylish-maxi-gown-for-any-occasion-comfortable-fabric-flattering-fit-and-vibrant-colors-perfect-for-parties-weddings-and-casual-wear-available-in-various-sizes-shop-now-on-daraz-i535163889-s3420358222.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+      <!-- P16 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/1Y7B8tjB/09860f1b58d614fc92bc2119640ba400.png" alt="Printed Lawn 2 Piece Suit" loading="lazy">
+          <div class="card-badge">🔥 2.2K Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">Smar's Fashion Women's Printed Multicolor Stitched Lawn 2 Piece Suit</div>
+          <div class="rating">★★★★★ <span class="reviews">(568 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 999</span><span class="old-price">PKR 2,000</span><span class="discount">50% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F2-i426692478-s2272539979.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+      <!-- P17 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/SD9MLLXw/h1.png" alt="3D Printed Jacket Style Suit" loading="lazy">
+          <div class="card-badge">🔥 2.9K Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">Stylish Collection Linen 2pc – All Season 3D Printed Jacket Style Suit</div>
+          <div class="rating">★★★★★ <span class="reviews">(630 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 1,000</span><span class="old-price">PKR 2,100</span><span class="discount">52% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F2-3d-i432135431-s2386686076.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+      <!-- P18 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/R4vz4mXn/5b57b788d2d8cc1f012f5190f3f6beb5.png" alt="Fancy 2pc Dress for Women" loading="lazy">
+          <div class="card-badge">🔥 2.8K Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">Stylish Collection Stitched Printed Fancy 2pc Dress for Women</div>
+          <div class="rating">★★★☆☆ <span class="reviews">(660 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 1,560</span><span class="old-price">PKR 3,100</span><span class="discount">50% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F2-i430775656-s2393961808.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+      <!-- P19 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/fdRFGVCk/9c5a4b6334d454365c4c2f26e9240483.png" alt="Leaf Print Linen 2PC Stitched Dress" loading="lazy">
+          <div class="card-badge">🔥 9.9K Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">Stylish Collection Leaf Print Linen 2PC Stitched Dress – Summer, Multiple Colors</div>
+          <div class="rating">★★★★☆ <span class="reviews">(2,379 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 1,000</span><span class="old-price">PKR 2,100</span><span class="discount">52% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F2-i434919136-s2372303552.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+      <!-- P20 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/TBw26kwx/f2554731cfb3a6c0a2aefb89a6bbc231.png" alt="Embroidered Floral Coaty with Maxi" loading="lazy">
+          <div class="card-badge">🔥 1.9K Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">Dealistaan Stitched Embroidered Floral Coaty with Maxi 2Pc Dress</div>
+          <div class="rating">★★★★☆ <span class="reviews">(544 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 1,399</span><span class="old-price">PKR 4,200</span><span class="discount">67% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F2-i397090351-s4005391162.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+    </div><!-- /product-grid -->
   </section>
 
- <!-- ==================== HOME & LIVING ==================== -->
-<section id="home-living">
-  <div class="section-title">
-    <h2>🏡 Home & Living</h2>
-    <span>4-7% Commission • Daily Use • Top Sellers</span>
-  </div>
-  <div class="product-grid">
+  <!-- ══ HOME & LIVING SECTION ══ -->
+  <section id="home-living">
+    <div class="section-head">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <div class="section-line"></div>
+        <div>
+          <div class="section-title">🏡 Home & Living</div>
+          <div style="color:var(--muted);font-size:.82rem;margin-top:3px;">4–7% Commission &nbsp;•&nbsp; Daily Use &nbsp;•&nbsp; Top Sellers</div>
+        </div>
+      </div>
+      <span class="section-sub">20 Top Picks</span>
+    </div>
+    <div class="product-grid">
 
-    <!-- Product 1: 3D Brick Wall Stickers (38.5K Sold - TOP SELLER) -->
-    <div class="product-card">
-      <img class="product-img" src="https://i.ibb.co/35C3n4Jp/092eb955bbc794167a194720401e4064.jpg" alt="3D Brick Wall Stickers PE Foam Self-Adhesive Wallpaper for TV Wall & Sofa Background">
-      <div class="product-info">
-        <div class="product-badge">🔥 38.5K Sold</div>
-        <div class="product-title">3D Brick Wall Stickers – Peel and Stick for TV Walls, Sofa Background (70x77cm)</div>
-        <div class="rating">★★★★★ <span class="reviews">(2,457 reviews)</span></div>
-        <div class="price">PKR 335 <span style="font-size:0.7rem; color:#8b90b0;">(33% off – was PKR 499)</span></div>
-        <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F3d-brick-wall-stickers-pe-foam-high-self-adhesive-wallpaper-peel-and-stick-3d-art-wall-brick-room-panels-for-tv-walls-sofa-background-wall-decor-size-70-x-77-cm-i220733675-s1914787376.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+      <!-- H1 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/35C3n4Jp/092eb955bbc794167a194720401e4064.jpg" alt="3D Brick Wall Stickers" loading="lazy">
+          <div class="card-badge">🔥 38.5K Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">3D Brick Wall Stickers – Peel & Stick for TV Walls, Sofa Background (70x77cm)</div>
+          <div class="rating">★★★★★ <span class="reviews">(2,457 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 335</span><span class="old-price">PKR 499</span><span class="discount">33% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F3d-brick-wall-stickers-pe-foam-high-self-adhesive-wallpaper-peel-and-stick-3d-art-wall-brick-room-panels-for-tv-walls-sofa-background-wall-decor-size-70-x-77-cm-i220733675-s1914787376.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+      <!-- H2 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/WLt2XTn/17bf958279785969bbab2a38f8d82f2f.jpg" alt="PE Foam 3D Wall Paper" loading="lazy">
+          <div class="card-badge">🔥 22K+ Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">PE Foam 3D Wall Paper – DIY Brick Sticker for Living Room & Kids Bedroom</div>
+          <div class="rating">★★★★★ <span class="reviews">(1,388 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 141</span><span class="old-price">PKR 500</span><span class="discount">72% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2Fpe-3d-diy-i441397620-s3981290560.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+      <!-- H3 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/8DbPFYhW/db72ef0c51c3d380f4cb6fee59e0e7be.jpg" alt="3D Golden Butterfly Mirror Stickers" loading="lazy">
+          <div class="card-badge">🔥 14.7K Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">12 Pcs Set 3D Golden Butterfly Mirror Wall Stickers for Home Decoration</div>
+          <div class="rating">★★★★★ <span class="reviews">(2,269 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 215</span><span class="old-price">PKR 550</span><span class="discount">61% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F12-3d-i203844903-s1612171451.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+      <!-- H4 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/V0zBR5rZ/70c6a8e6d7948062b170d26d09f340a0.png" alt="Wooden MDF Butterfly Wall Decor" loading="lazy">
+          <div class="card-badge">🔥 10K+ Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">Pack of 30+ Wooden MDF 3D Butterfly Wall Decor – Mixed Sizes with Adhesive</div>
+          <div class="rating">★★★★★ <span class="reviews">(1,737 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 117</span><span class="old-price">PKR 299</span><span class="discount">61% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2Fpack-of-30-wooden-mdf-3d-butterfly-wall-decor-in-mixed-sizes-with-adhesive-tape-for-home-and-gift-decoration-i429413323-s2043104544.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+      <!-- H5 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/rf6Tz8CW/Sebbfe6b12e484a75b8229f119984ee99-L.jpg" alt="Glow In The Dark Stars Stickers" loading="lazy">
+          <div class="card-badge">⭐ 9.3K Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">Pack of 100 – 3D Stars Glow In The Dark Wall Stickers for Kids Room & Ceiling</div>
+          <div class="rating">★★★★★ <span class="reviews">(1,094 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 149</span><span class="old-price">PKR 299</span><span class="discount">50% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F100-3d-i560340185-s2593499916.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+      <!-- H6 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/hJ6MV8Vp/S142b19f33dbe4b4cb3982e4271c1cc7a-O.jpg" alt="Leaf Wall Sticker 20 pcs" loading="lazy">
+          <div class="card-badge">🍃 2.6K Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">20 pcs Leaf Wall Sticker for Living Room – Wall Art Home Decoration</div>
+          <div class="rating">★★★★★ <span class="reviews">(292 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 189</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F20-i465496713-s2199381247.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+      <!-- H7 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/7JkwLN26/9ec9e70b75342987cdecf7f1ed1369af.png" alt="Self-Adhesive 3D Wall Brick Sheet" loading="lazy">
+          <div class="card-badge">⭐ 5.1K Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">Self-Adhesive 3D Wall Brick Sheet – Waterproof Fomic Wall Stickers (35x38cm)</div>
+          <div class="rating">★★★★★ <span class="reviews">(468 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 87</span><span class="old-price">PKR 89</span><span class="discount">2% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2Fself-adhesive-3d-wall-brick-sheet-wallpaper-for-room-white-fomic-wall-stickers-for-home-decoration-3538cm-waterproof-i590434339-s14012248008.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+      <!-- H8 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/S7DvJSnf/a362acadcf090ff5fa3858a5b3e2e97d.jpg" alt="Grass Wall Sticker 3D Plant" loading="lazy">
+          <div class="card-badge">🌿 1.2K Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">Grass Wall Sticker – 3D Artificial Plant Wall Art, Removable DIY Leaf for Indoor Decor</div>
+          <div class="rating">★★★★★ <span class="reviews">(167 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 399</span><span class="old-price">PKR 699</span><span class="discount">43% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F3d-diy-i457881311-s2168766529.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+      <!-- H9 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/jv5Rx5H5/22d6d8412cf071275b64513662971a9c.jpg" alt="3D Wall Panels PE Foam Flower" loading="lazy">
+          <div class="card-badge">🌸 3K+ Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">3D Wall Panels PE Foam – Self-Adhesive Flower Design, Peel & Stick (70x70cm)</div>
+          <div class="rating">★★★★★ <span class="reviews">(139 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 340</span><span class="old-price">PKR 600</span><span class="discount">43% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F1-3d-70x70-i438396899-s2122413789.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+      <!-- H10 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/Hf8wfbHr/5406e3b1a4b356711ff175e45a333789.jpg" alt="Flower Birdcage Wall Sticker" loading="lazy">
+          <div class="card-badge">🐦 3.6K Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">Colorful Flower Birdcage Flying Birds Wall Sticker for Living Room & Bedroom</div>
+          <div class="rating">★★★★★ <span class="reviews">(770 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 299</span><span class="old-price">PKR 849</span><span class="discount">65% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F-i433802104-s2081507504.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+      <!-- H11 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/W4VkWRfh/fc53ebd66c9f3cf5869654be52779f70.jpg" alt="Vintage 3D Brick Wall Sticker" loading="lazy">
+          <div class="card-badge">🧱 9.4K Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">3D Brick Wall Sticker – Vintage Design, Self-Adhesive Foam Wallpaper (70x77cm)</div>
+          <div class="rating">★★★★★ <span class="reviews">(403 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 375</span><span class="old-price">PKR 500</span><span class="discount">25% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F1-3d-7077-i438009681-s2118435251.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+      <!-- H12 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/c4hBsxd/2871a552bf8ff322ee50e105e424ebf0.jpg" alt="3D Green Grass PVC Wall Stickers" loading="lazy">
+          <div class="card-badge">🌿 1.9K Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">3D Fresh Green Plant Removable Grass PVC Wall Stickers – Waterproof DIY (40x136cm)</div>
+          <div class="rating">★★★★☆ <span class="reviews">(254 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 449</span><span class="old-price">PKR 699</span><span class="discount">36% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F2025-3d-pvc-diy-40x136-i2392408-s10545197.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+      <!-- H13 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/dskgK5GQ/Sbec0d2a43c394fcaaa3353c424e5cef4e.jpg" alt="Acrylic Golden Mirror Stickers" loading="lazy">
+          <div class="card-badge">✨ 2.5K Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">Acrylic Golden Mirror Stickers – Waterproof Removable Elegant Wall Art</div>
+          <div class="rating">★★★★★ <span class="reviews">(444 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 69</span><span class="old-price">PKR 200</span><span class="discount">66% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2Facrylic-golden-mirror-stickers-set-for-diy-home-decoration-waterproof-removable-elegant-wall-art-for-living-room-bedroom-bathroom-multiple-sizes-i273681240-s1506984209.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+      <!-- H14 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/zhCB0QCs/0883606559dda85907a708e90d0ffe04.jpg" alt="3D Butterfly Wall Stickers PVC" loading="lazy">
+          <div class="card-badge">🦋 5.7K Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">12 Pcs Butterfly Wall Stickers – 3D PVC Magnet Butterflies for DIY Wall Decor</div>
+          <div class="rating">★★★★★ <span class="reviews">(1,083 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 249</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F12-diy-3d-pvc-i130798454-s1290684012.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+      <!-- H15 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/n8sMRTkd/0cd6715c08436da0878df0e40cde8c65.jpg" alt="Switch Board Wooden Wall Art" loading="lazy">
+          <div class="card-badge">🪵 5.7K Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">Switch Board Wooden Wall Art – Room Decoration for Living Room & Bedroom</div>
+          <div class="rating">★★★★☆ <span class="reviews">(1,071 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 94</span><span class="old-price">PKR 399</span><span class="discount">76% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2Fswitch-board-wooden-wall-art-room-decoration-items-wall-decor-art-for-home-living-room-bedroom-i432331234-s2063864462.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+      <!-- H16 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/3mqx6ncG/b96c38869123f2a0d63c62372ac4e7ee.jpg" alt="3D Acrylic Mirror Hexagon" loading="lazy">
+          <div class="card-badge">🔶 1.2K Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">3D Acrylic Mirror Hexagon Wall Decor – Silver/Black/Golden for Bedroom & Office</div>
+          <div class="rating">★★★★☆ <span class="reviews">(242 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 299</span><span class="old-price">PKR 888</span><span class="discount">66% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F3d-acrylic-mirror-hexagon-acrylic-wall-decoration-items-for-home-decor-living-rooms-decoration-items-for-wall-decor-ideas-mirror-stickers-for-bedrooms-and-offices-and-for-gift-items-decore-items-wall-decals-decoration-pieces-silver-black-golden-i492156067-s2741370329.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+      <!-- H17 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/pBhjsh2W/1472a90498faa39114c2794661710096.jpg" alt="Leaf Wall Sticker Decal Set 20 Pcs" loading="lazy">
+          <div class="card-badge">🍃 2.7K Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">Leaf Wall Sticker Decal Set – 20 Pcs Removable Decorative Leaves for Bedroom</div>
+          <div class="rating">★★★★★ <span class="reviews">(455 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 260</span><span class="old-price">PKR 350</span><span class="discount">26% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2Fleaf-wall-sticker-decal-set-20-pcs-removable-decorative-leaves-for-home-bedroom-living-room-i364755544-s1816465084.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+      <!-- H18 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/TMNLVYRJ/402da1aed196bed9fc176fc23c8e45b0.jpg" alt="Black Polka Dots Wall Stickers" loading="lazy">
+          <div class="card-badge">⚫ 3.9K Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">Black Polka Dots Wall Stickers – Contemporary Circle Pattern for Bedroom</div>
+          <div class="rating">★★★★★ <span class="reviews">(812 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 72</span><span class="old-price">PKR 100</span><span class="discount">28% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2Fblack-polka-dots-wall-stickers-contemporary-circle-pattern-for-bedroom-and-living-room-i383531501-s1885182873.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+      <!-- H19 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/WWMbKdYS/d687c518614c860c01a2c4b789f6f00f.jpg" alt="Self-Adhesive Wall Decal Stickers" loading="lazy">
+          <div class="card-badge">🎨 1.6K Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">Self-Adhesive Wall Decal Stickers – Matte/Gloss Finish, Waterproof Vinyl</div>
+          <div class="rating">★★★★☆ <span class="reviews">(375 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 399</span><span class="old-price">PKR 699</span><span class="discount">43% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F-i428707073-s2252671095.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+      <!-- H20 -->
+      <div class="product-card">
+        <div class="card-img-wrap">
+          <img class="product-img" src="https://i.ibb.co/r2N3rQ2x/e4fac0ad5e16c407df6812c2c9e03b07.jpg" alt="Pack of 6 3D Brick Wall Stickers" loading="lazy">
+          <div class="card-badge">🧱 2.3K Sold</div>
+          <div class="card-wish">🤍</div>
+        </div>
+        <div class="product-info">
+          <div class="product-title">[Pack of 6] 3D Brick Wall Stickers – 3mm PE Foam, Self Adhesive Wallpaper Sheets</div>
+          <div class="rating">★★★★★ <span class="reviews">(403 reviews)</span></div>
+          <div class="price-row"><span class="price">PKR 899</span><span class="old-price">PKR 1,499</span><span class="discount">40% OFF</span></div>
+          <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2Fpack-of-6-3d-bricks-wallpaper-sheet-for-kitchen-room-walls-sticker-sheets-for-home-or-office-wall-texture-sticker-sheet-for-bedroom-living-drawing-room-wall-paper-waterproof-counter-peel-and-stick-water-proof-3-d-panel-washroom-white-black-i367094518-s2802977246.html" class="card-btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+        </div>
+      </div>
+
+    </div><!-- /product-grid -->
+  </section>
+
+  <!-- ══ BLOG SECTION ══ -->
+  <section id="blog">
+    <div class="section-head">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <div class="section-line"></div>
+        <div>
+          <div class="section-title">📝 Our Latest Blog Posts</div>
+          <div style="color:var(--muted);font-size:.82rem;margin-top:3px;">Style tips, decor ideas & shopping guides for Pakistan</div>
+        </div>
+      </div>
+    </div>
+    <div class="blog-grid">
+
+      <a href="blog-fashion-guide.html" class="blog-card">
+        <div class="blog-img-wrap">
+          <img class="blog-img" src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=600&q=80" alt="Pakistan Fashion Guide 2025">
+        </div>
+        <div class="blog-info">
+          <span class="blog-cat">👗 FASHION</span>
+          <div class="blog-title">Best Women's Fashion Trends in Pakistan 2025 – What's Hot on Daraz</div>
+          <div class="blog-excerpt">From embroidered gowns to printed lawn suits, discover what's trending for Pakistani women this season.</div>
+          <div class="blog-meta"><span>📅 May 2025</span><span>•</span><span>5 min read</span></div>
+        </div>
+      </a>
+
+      <a href="blog-home-decor.html" class="blog-card">
+        <div class="blog-img-wrap">
+          <img class="blog-img" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80" alt="Home Decor Tips Pakistan">
+        </div>
+        <div class="blog-info">
+          <span class="blog-cat">🏡 HOME DECOR</span>
+          <div class="blog-title">10 Budget Home Decor Ideas Under PKR 500 – Transform Any Room</div>
+          <div class="blog-excerpt">Wall stickers, butterfly mirrors, and glow stars — how to make your home look stunning without spending a fortune.</div>
+          <div class="blog-meta"><span>📅 May 2025</span><span>•</span><span>6 min read</span></div>
+        </div>
+      </a>
+
+      <a href="top-picks.html" class="blog-card">
+        <div class="blog-img-wrap">
+          <img class="blog-img" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&q=80" alt="Top Picks Daraz">
+        </div>
+        <div class="blog-info">
+          <span class="blog-cat">🏆 TOP PICKS</span>
+          <div class="blog-title">Top 10 Best-Selling Daraz Products You Need to Try Right Now</div>
+          <div class="blog-excerpt">With thousands of reviews and tens of thousands sold, these are the products Pakistan can't stop buying.</div>
+          <div class="blog-meta"><span>📅 June 2025</span><span>•</span><span>4 min read</span></div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+</div><!-- /container -->
+
+<!-- ═══════════════ NEWSLETTER ═══════════════ -->
+<div class="newsletter">
+  <h2>💌 Get the Best Deals First</h2>
+  <p>Join 5,000+ smart shoppers who get exclusive Daraz deals straight to their inbox.</p>
+  <div class="nl-form">
+    <input class="nl-input" type="email" placeholder="Enter your email address...">
+    <button class="nl-btn">Subscribe Free</button>
+  </div>
+</div>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <div class="footer-grid">
+
+    <!-- Brand -->
+    <div>
+      <span class="footer-logo">🛍️ Best Deal Hub</span>
+      <p class="footer-desc">Pakistan's most trusted Daraz affiliate site. We handpick the best fashion and home decor deals so you don't have to. Every product is verified, reviewed, and worth every rupee.</p>
+      <div class="social-links">
+        <div class="social-btn" title="Facebook">f</div>
+        <div class="social-btn" title="Instagram">📷</div>
+        <div class="social-btn" title="YouTube">▶</div>
+        <div class="social-btn" title="WhatsApp">💬</div>
+        <div class="social-btn" title="Pinterest">📌</div>
       </div>
     </div>
 
-    <!-- Product 2: PE Foam 3D Wall Paper (22K+ Sold) -->
-    <div class="product-card">
-      <img class="product-img" src="https://i.ibb.co/WLt2XTn/17bf958279785969bbab2a38f8d82f2f.jpg" alt="PE Foam 3D Wall Paper - DIY Home Decor Brick Wallpaper Sticker">
-      <div class="product-info">
-        <div class="product-badge">🔥 22K+ Sold</div>
-        <div class="product-title">PE Foam 3D Wall Paper – DIY Brick Sticker for Living Room & Kids Bedroom</div>
-        <div class="rating">★★★★★ <span class="reviews">(1,388 reviews)</span></div>
-        <div class="price">PKR 141 <span style="font-size:0.7rem; color:#8b90b0;">(72% off – was PKR 500)</span></div>
-        <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2Fpe-3d-diy-i441397620-s3981290560.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+    <!-- Shop -->
+    <div>
+      <h4>🛒 Shop</h4>
+      <div class="footer-links">
+        <a href="#fashion">Women's Fashion</a>
+        <a href="#home-living">Home & Living</a>
+        <a href="top-picks.html">Top Picks</a>
+        <a href="deals.html">Hot Deals</a>
+        <a href="size-guide.html">Size Guide</a>
       </div>
     </div>
 
-    <!-- Product 3: 3D Golden Butterfly Mirror Wall Stickers (14.7K Sold) -->
-    <div class="product-card">
-      <img class="product-img" src="https://i.ibb.co/8DbPFYhW/db72ef0c51c3d380f4cb6fee59e0e7be.jpg" alt="12 Pcs Set 3D Golden Butterfly Mirror Wall Stickers">
-      <div class="product-info">
-        <div class="product-badge">🔥 14.7K Sold</div>
-        <div class="product-title">12 Pcs Set 3D Golden Butterfly Mirror Wall Stickers for Home Decoration</div>
-        <div class="rating">★★★★★ <span class="reviews">(2,269 reviews)</span></div>
-        <div class="price">PKR 215 <span style="font-size:0.7rem; color:#8b90b0;">(61% off – was PKR 550)</span></div>
-        <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F12-3d-i203844903-s1612171451.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+    <!-- Learn -->
+    <div>
+      <h4>📚 Learn</h4>
+      <div class="footer-links">
+        <a href="blog-fashion-guide.html">Fashion Guide 2025</a>
+        <a href="blog-home-decor.html">Home Decor Tips</a>
+        <a href="size-guide.html">How to Measure Size</a>
+        <a href="#blog">All Blog Posts</a>
       </div>
     </div>
 
-    <!-- Product 4: Wooden MDF Butterfly Wall Decor (10K+ Sold) -->
-    <div class="product-card">
-      <img class="product-img" src="https://i.ibb.co/V0zBR5rZ/70c6a8e6d7948062b170d26d09f340a0.png" alt="Pack of 30+ Wooden MDF 3D Butterfly Wall Decor">
-      <div class="product-info">
-        <div class="product-badge">🔥 10K+ Sold</div>
-        <div class="product-title">Pack of 30+ Wooden MDF 3D Butterfly Wall Decor – Mixed Sizes with Adhesive Tape</div>
-        <div class="rating">★★★★★ <span class="reviews">(1,737 reviews)</span></div>
-        <div class="price">PKR 117 <span style="font-size:0.7rem; color:#8b90b0;">(61% off – was PKR 299)</span></div>
-        <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2Fpack-of-30-wooden-mdf-3d-butterfly-wall-decor-in-mixed-sizes-with-adhesive-tape-for-home-and-gift-decoration-i429413323-s2043104544.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+    <!-- Info -->
+    <div>
+      <h4>ℹ️ Info</h4>
+      <div class="footer-links">
+        <a href="#">About Us</a>
+        <a href="#">How It Works</a>
+        <a href="#">Daraz Affiliate</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Contact Us</a>
       </div>
     </div>
 
-    <!-- Product 5: Glow In The Dark Stars Wall Stickers (9.3K Sold) -->
-    <div class="product-card">
-      <img class="product-img" src="https://i.ibb.co/rf6Tz8CW/Sebbfe6b12e484a75b8229f119984ee99-L.jpg" alt="Pack of 100 - 3D Stars Glow In The Dark Wall Stickers">
-      <div class="product-info">
-        <div class="product-badge">⭐ 9.3K Sold</div>
-        <div class="product-title">Pack of 100 - 3D Stars Glow In The Dark Wall Stickers for Kids Room & Bedroom Ceiling</div>
-        <div class="rating">★★★★★ <span class="reviews">(1,094 reviews)</span></div>
-        <div class="price">PKR 149 <span style="font-size:0.7rem; color:#8b90b0;">(50% off – was PKR 299)</span></div>
-        <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F100-3d-i560340185-s2593499916.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
-      </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Best Deal Hub. All rights reserved. Made with ❤️ in Pakistan.</p>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Sitemap</a>
     </div>
+  </div>
 
-    <!-- Product 6: 20 pcs Leaf Wall sticker for living room -->
-    <div class="product-card">
-  <img class="product-img" src="https://i.ibb.co/hJ6MV8Vp/S142b19f33dbe4b4cb3982e4271c1cc7a-O.jpg" alt="20 pcs Leaf Wall Sticker for Living Room Wall Art Home Decoration">
-  <div class="product-info">
-    <div class="product-badge">🍃 2.6K Sold</div>
-    <div class="product-title">20 pcs Leaf Wall Sticker for Living Room – Wall Art Home Decoration</div>
-    <div class="rating">★★★★★ <span class="reviews">(292 reviews)</span></div>
-    <div class="price">PKR 189</div>
-    <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F20-i465496713-s2199381247.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
+  <div class="affiliate-note">
+    ⚠️ <strong>Affiliate Disclosure:</strong> Best Deal Hub is a participant in the Daraz Affiliate Programme. We earn a commission when you click on product links and make a purchase — at no extra cost to you. All opinions are our own and we only recommend products we genuinely believe in.
   </div>
-</div>
+</footer>
 
-    <!-- Product 7: Self-Adhesive 3D Wall Brick Sheet (5.1K Sold) -->
-    <div class="product-card">
-      <img class="product-img" src="https://i.ibb.co/7JkwLN26/9ec9e70b75342987cdecf7f1ed1369af.png" alt="Self-Adhesive 3D Wall Brick Sheet Wallpaper">
-      <div class="product-info">
-        <div class="product-badge">⭐ 5.1K Sold</div>
-        <div class="product-title">Self-Adhesive 3D Wall Brick Sheet – Waterproof Fomic Wall Stickers (35x38cm)</div>
-        <div class="rating">★★★★★ <span class="reviews">(468 reviews)</span></div>
-        <div class="price">PKR 87 <span style="font-size:0.7rem; color:#8b90b0;">(2% off – was PKR 89)</span></div>
-        <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2Fself-adhesive-3d-wall-brick-sheet-wallpaper-for-room-white-fomic-wall-stickers-for-home-decoration-3538cm-waterproof-i590434339-s14012248008.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
-      </div>
-    </div>
+<!-- ═══════════════ SLIDER JS ═══════════════ -->
+<script>
+const slides = document.getElementById('slides');
+const dotsContainer = document.getElementById('dots');
+const total = slides.children.length;
+let current = 0, timer;
 
-    <!-- Product 8: Grass Wall Sticker, 3D Artificial Plant Wall Art -->
-    <div class="product-card">
-  <img class="product-img" src="https://i.ibb.co/S7DvJSnf/a362acadcf090ff5fa3858a5b3e2e97d.jpg" alt="Grass Wall Sticker - 3D Artificial Plant Wall Art, Green Plant Wallpaper Sheet for Indoor Decoration">
-  <div class="product-info">
-    <div class="product-badge">🌿 1.2K Sold</div>
-    <div class="product-title">Grass Wall Sticker – 3D Artificial Plant Wall Art, Green Plant Wallpaper Sheet, Removable DIY Leaf Flower for Indoor Decor</div>
-    <div class="rating">★★★★★ <span class="reviews">(167 reviews)</span></div>
-    <div class="price">PKR 399 <span style="font-size:0.7rem; color:#8b90b0;">(43% off – was PKR 699)</span></div>
-    <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F3d-diy-i457881311-s2168766529.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
-  </div>
-</div>
-   <!-- Product 9:1 PCS] 3D Wall Panels PE Foam Wall Panels -->
-   <div class="product-card">
-  <img class="product-img" src="https://i.ibb.co/jv5Rx5H5/22d6d8412cf071275b64513662971a9c.jpg" alt="3D Wall Panels PE Foam Self-Adhesive Flower Design Wallpaper 70x70cm">
-  <div class="product-info">
-    <div class="product-badge">🌸 3K+ Sold</div>
-    <div class="product-title">3D Wall Panels PE Foam – Self-Adhesive Flower Design, Peel and Stick Wallpaper (70x70cm)</div>
-    <div class="rating">★★★★★ <span class="reviews">(139 reviews)</span></div>
-    <div class="price">PKR 340 <span style="font-size:0.7rem; color:#8b90b0;">(43% off – was PKR 600)</span></div>
-    <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F1-3d-70x70-i438396899-s2122413789.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
-  </div>
-</div>
-   <!-- Product 10:Creative Home Decor Living Room Decals Wallpaper -->
-   <div class="product-card">
-  <img class="product-img" src="https://i.ibb.co/Hf8wfbHr/5406e3b1a4b356711ff175e45a333789.jpg" alt="Colorful Flower Birdcage Flying Birds Wall Sticker for Living Room Bedroom Nursery Window Decor">
-  <div class="product-info">
-    <div class="product-badge">🐦 3.6K Sold</div>
-    <div class="product-title">Creative Home Decor – Colorful Flower Birdcage Flying Birds Wall Sticker for Living Room, Bedroom, Nursery & Window</div>
-    <div class="rating">★★★★★ <span class="reviews">(770 reviews)</span></div>
-    <div class="price">PKR 299 <span style="font-size:0.7rem; color:#8b90b0;">(65% off – was PKR 849)</span></div>
-    <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F-i433802104-s2081507504.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
-  </div>
-</div>
-    <!-- Product 11:1PCS 3D Brick Wall Sticker Vintage Design -->
-   <div class="product-card">
-  <img class="product-img" src="https://i.ibb.co/W4VkWRfh/fc53ebd66c9f3cf5869654be52779f70.jpg" alt="1PCS 3D Brick Wall Sticker Vintage Design Self-Adhesive Foam Wallpaper Panels 70x77cm">
-  <div class="product-info">
-    <div class="product-badge">🧱 9.4K Sold</div>
-    <div class="product-title">1PCS 3D Brick Wall Sticker – Vintage Design, Self-Adhesive Foam Wallpaper Panels for Room Decal (70x77cm)</div>
-    <div class="rating">★★★★★ <span class="reviews">(403 reviews)</span></div>
-    <div class="price">PKR 375 <span style="font-size:0.7rem; color:#8b90b0;">(25% off – was PKR 500)</span></div>
-    <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F1-3d-7077-i438009681-s2118435251.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
-  </div>
-</div>
-   <!-- Product 12:2026 New 3D Fresh Green Plant Removable Green Grass -->
-   <div class="product-card">
-  <img class="product-img" src="https://i.ibb.co/c4hBsxd/2871a552bf8ff322ee50e105e424ebf0.jpg" alt="2026 New 3D Fresh Green Plant Removable Green Grass PVC Wall Stickers for Home Decor Kids Room Bathroom">
-  <div class="product-info">
-    <div class="product-badge">🌿 1.9K Sold</div>
-    <div class="product-title">2025 New 3D Fresh Green Plant Removable Green Grass PVC Wall Stickers – Waterproof DIY Art Vinyl for Home Decor, Kids Room, Bathroom (40x136cm)</div>
-    <div class="rating">★★★★☆ <span class="reviews">(254 reviews)</span></div>
-    <div class="price">PKR 449 <span style="font-size:0.7rem; color:#8b90b0;">(36% off – was PKR 699)</span></div>
-    <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F2025-3d-pvc-diy-40x136-i2392408-s10545197.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
-  </div>
-</div>
-   <!-- Product 13:Acrylic Golden Mirror Stickers Set for DIY Home Decoration -->
-   <div class="product-card">
-  <img class="product-img" src="https://i.ibb.co/dskgK5GQ/Sbec0d2a43c394fcaaa3353c424e5cef4e.jpg" alt="Acrylic Golden Mirror Stickers Set for DIY Home Decoration - Elegant Wall Art for Living Room, Bedroom, Bathroom">
-  <div class="product-info">
-    <div class="product-badge">✨ 2.5K Sold</div>
-    <div class="product-title">Acrylic Golden Mirror Stickers Set – Waterproof, Removable, Elegant Wall Art for Living Room, Bedroom, Bathroom (Multiple Sizes)</div>
-    <div class="rating">★★★★★ <span class="reviews">(444 reviews)</span></div>
-    <div class="price">PKR 69 <span style="font-size:0.7rem; color:#8b90b0;">(66% off – was PKR 200)</span></div>
-    <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2Facrylic-golden-mirror-stickers-set-for-diy-home-decoration-waterproof-removable-elegant-wall-art-for-living-room-bedroom-bathroom-multiple-sizes-i273681240-s1506984209.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
-  </div>
-</div>
-    <!-- Product 14:12 Pcs Butterfly Wall Stickers Decoration Magnet Butterflies -->
-   <div class="product-card">
-  <img class="product-img" src="https://i.ibb.co/zhCB0QCs/0883606559dda85907a708e90d0ffe04.jpg" alt="12 Pcs Butterfly Wall Stickers Decoration - 3D PVC Magnet Butterflies for DIY Wallpaper">
-  <div class="product-info">
-    <div class="product-badge">🦋 5.7K Sold</div>
-    <div class="product-title">12 Pcs Butterfly Wall Stickers – 3D PVC Magnet Butterflies for DIY Wall Decoration</div>
-    <div class="rating">★★★★★ <span class="reviews">(1,083 reviews)</span></div>
-    <div class="price">PKR 249 <span style="font-size:0.7rem; color:#8b90b0;">(was PKR 250)</span></div>
-    <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F12-diy-3d-pvc-i130798454-s1290684012.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
-  </div>
-</div>
-    <!-- Product 15:Switch Board Wooden Wall Art Room Decoration -->
-   <div class="product-card">
-  <img class="product-img" src="https://i.ibb.co/n8sMRTkd/0cd6715c08436da0878df0e40cde8c65.jpg" alt="Switch Board Wooden Wall Art Room Decoration Items for Home Living Room Bedroom">
-  <div class="product-info">
-    <div class="product-badge">🪵 5.7K Sold</div>
-    <div class="product-title">Switch Board Wooden Wall Art – Room Decoration Items, Wall Décor Art for Home Living Room & Bedroom</div>
-    <div class="rating">★★★★☆ <span class="reviews">(1,071 reviews)</span></div>
-    <div class="price">PKR 94 <span style="font-size:0.7rem; color:#8b90b0;">(76% off – was PKR 399)</span></div>
-    <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2Fswitch-board-wooden-wall-art-room-decoration-items-wall-decor-art-for-home-living-room-bedroom-i432331234-s2063864462.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
-  </div>
-</div>
-   <!-- Product 16:3D Acrylic Mirror Hexagon Acrylic Wall Decoration-->
-   <div class="product-card">
-  <img class="product-img" src="https://i.ibb.co/3mqx6ncG/b96c38869123f2a0d63c62372ac4e7ee.jpg" alt="3D Acrylic Mirror Hexagon Wall Decoration Items for Home Decor Living Rooms Bedrooms Offices">
-  <div class="product-info">
-    <div class="product-badge">🔶 1.2K Sold</div>
-    <div class="product-title">3D Acrylic Mirror Hexagon Wall Decoration – Mirror Stickers for Bedrooms, Offices & Living Rooms (Silver/Black/Golden)</div>
-    <div class="rating">★★★★☆ <span class="reviews">(242 reviews)</span></div>
-    <div class="price">PKR 299 <span style="font-size:0.7rem; color:#8b90b0;">(66% off – was PKR 888)</span></div>
-    <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F3d-acrylic-mirror-hexagon-acrylic-wall-decoration-items-for-home-decor-living-rooms-decoration-items-for-wall-decor-ideas-mirror-stickers-for-bedrooms-and-offices-and-for-gift-items-decore-items-wall-decals-decoration-pieces-silver-black-golden-i492156067-s2741370329.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
-  </div>
-</div>
-   <!-- Product 17:Leaf Wall Sticker Decal Set 20 Pcs Removable Decorative Leaves for Home-->
-   <div class="product-card">
-  <img class="product-img" src="https://i.ibb.co/pBhjsh2W/1472a90498faa39114c2794661710096.jpg" alt="Leaf Wall Sticker Decal Set 20 Pcs Removable Decorative Leaves for Home Bedroom Living Room">
-  <div class="product-info">
-    <div class="product-badge">🍃 2.7K Sold</div>
-    <div class="product-title">Leaf Wall Sticker Decal Set – 20 Pcs Removable Decorative Leaves for Home, Bedroom & Living Room</div>
-    <div class="rating">★★★★★ <span class="reviews">(455 reviews)</span></div>
-    <div class="price">PKR 260 <span style="font-size:0.7rem; color:#8b90b0;">(26% off – was PKR 350)</span></div>
-    <div class="shipping-badge">📦 Free Shipping</div>
-    <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2Fleaf-wall-sticker-decal-set-20-pcs-removable-decorative-leaves-for-home-bedroom-living-room-i364755544-s1816465084.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
-  </div>
-</div>
-   <!-- Product 18:Black Polka Dots Wall Stickers Contemporary Circle Pattern-->
-   <div class="product-card">
-  <img class="product-img" src="https://i.ibb.co/TMNLVYRJ/402da1aed196bed9fc176fc23c8e45b0.jpg" alt="Black Polka Dots Wall Stickers Contemporary Circle Pattern for Bedroom and Living Room">
-  <div class="product-info">
-    <div class="product-badge">⚫ 3.9K Sold</div>
-    <div class="product-title">Black Polka Dots Wall Stickers – Contemporary Circle Pattern for Bedroom & Living Room</div>
-    <div class="rating">★★★★★ <span class="reviews">(812 reviews)</span></div>
-    <div class="price">PKR 72 <span style="font-size:0.7rem; color:#8b90b0;">(28% off – was PKR 100)</span></div>
-    <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2Fblack-polka-dots-wall-stickers-contemporary-circle-pattern-for-bedroom-and-living-room-i383531501-s1885182873.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
-  </div>
-</div>
-   <!-- Product 19:Self-Adhesive High-Quality Wall Decal Stickers for Home Decor-->
-   <div class="product-card">
-  <img class="product-img" src="https://i.ibb.co/WWMbKdYS/d687c518614c860c01a2c4b789f6f00f.jpg" alt="Self-Adhesive High-Quality Wall Decal Stickers for Home Decor Bedroom Living Room">
-  <div class="product-info">
-    <div class="product-badge">🎨 1.6K Sold</div>
-    <div class="product-title">Self-Adhesive High-Quality Wall Decal Stickers – Matte/Gloss Finish, Waterproof Vinyl for Home Decor, Bedroom & Living Room</div>
-    <div class="rating">★★★★☆ <span class="reviews">(375 reviews)</span></div>
-    <div class="price">PKR 399 <span style="font-size:0.7rem; color:#8b90b0;">(43% off – was PKR 699)</span></div>
-    <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2F-i428707073-s2252671095.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
-  </div>
-</div>
-   <!-- Product 20:[Pack of 6] 3D Brick Wall Stickers Self Adhesive Wallpaper-->
-   <div class="product-card">
-  <img class="product-img" src="https://i.ibb.co/r2N3rQ2x/e4fac0ad5e16c407df6812c2c9e03b07.jpg" alt="Pack of 6 3D Brick Wall Stickers Self Adhesive Wallpaper Sheets for Home Kitchen Bedroom Living Room">
-  <div class="product-info">
-    <div class="product-badge">🧱 2.3K Sold</div>
-    <div class="product-title">[Pack of 6] 3D Brick Wall Stickers – Self Adhesive Wallpaper Sheets, 3mm PE Foam, High Quality Bricks Wallpaper for Kitchen, Bedroom & Living Room</div>
-    <div class="rating">★★★★★ <span class="reviews">(403 reviews)</span></div>
-    <div class="price">PKR 899 <span style="font-size:0.7rem; color:#8b90b0;">(40% off – was PKR 1,499)</span></div>
-    <a href="https://go.urtrackinglink.com/aff_c?offer_id=164&aff_id=168276&url=https%3A%2F%2Fwww.daraz.pk%2Fproducts%2Fpack-of-6-3d-bricks-wallpaper-sheet-for-kitchen-room-walls-sticker-sheets-for-home-or-office-wall-texture-sticker-sheet-for-bedroom-living-drawing-room-wall-paper-waterproof-counter-peel-and-stick-water-proof-3-d-panel-washroom-white-black-i367094518-s2802977246.html" class="btn" target="_blank" rel="nofollow sponsored">VIEW ON DARAZ →</a>
-  </div>
-</div>
-   </section>
+// Build dots
+for(let i=0;i<total;i++){
+  const d = document.createElement('button');
+  d.className='dot'+(i===0?' active':'');
+  d.onclick=()=>goTo(i);
+  dotsContainer.appendChild(d);
+}
+
+function goTo(n){
+  current=(n+total)%total;
+  slides.style.transform=`translateX(-${current*100}%)`;
+  document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===current));
+  resetTimer();
+}
+function changeSlide(dir){goTo(current+dir);}
+function resetTimer(){clearInterval(timer);timer=setInterval(()=>goTo(current+1),4500);}
+resetTimer();
+
+// Wishlist toggle
+document.querySelectorAll('.card-wish').forEach(btn=>{
+  btn.onclick=()=>{btn.textContent=btn.textContent==='🤍'?'❤️':'🤍';};
+});
+</script>
+
+</body>
+</html>
