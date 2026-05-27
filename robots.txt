@@ -1,2 +1,32 @@
+# Best Deal Hub - robots.txt
+# Last Updated: January 2026
+
 User-agent: *
 Allow: /
+
+# Allow important pages
+Allow: /index.html
+Allow: /deals.html
+Allow: /top-picks.html
+Allow: /blog-*.html
+Allow: /size-guide.html
+Allow: /about.html
+Allow: /contact.html
+
+# Block sensitive/low-value pages
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /*?sort=
+Disallow: /*?filter=
+Disallow: /search?*
+
+# Block affiliate tracking parameters (prevent duplicate content)
+Disallow: /*?aff_id=
+Disallow: /*?offer_id=
+
+# Sitemap location
+Sitemap: https://secretbeautyfind.store/sitemap.xml
+
+# Crawl-delay for respectful crawling (optional)
+Crawl-delay: 1
