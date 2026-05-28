@@ -1793,49 +1793,69 @@
     ⚠️ <strong>Affiliate Disclosure:</strong> Best Deal Hub is a participant in the Daraz Affiliate Programme. We earn a commission when you click on product links and make a purchase — at no extra cost to you. All opinions are our own and we only recommend products we genuinely believe in.
   </div>
 </footer>
+  <!-- ═══════════════ SLIDER JS ═══════════════ -->
 
-<!-- ═══════════════ SLIDER JS ═══════════════ -->
 <script>
 const slides = document.getElementById('slides');
 const dotsContainer = document.getElementById('dots');
-const total = slides.children.length;
-let current = 0, timer;
+let current = 0;
+let timer;
 
-// Build dots with accessibility
-for(let i=0;i<total;i++){
-  const d = document.createElement('button');
-  d.className='dot'+(i===0?' active':'');
-  d.setAttribute('role','tab');
-  d.setAttribute('aria-label',`Go to slide ${i+1}`);
-  d.setAttribute('aria-selected', i===0 ? 'true' : 'false');
-  d.onclick=()=>goTo(i);
-  dotsContainer.appendChild(d);
+// Get total slides
+let total = slides.children.length;
+
+// Clear and rebuild dots
+if (dotsContainer) {
+  dotsContainer.innerHTML = '';
+  for (let i = 0; i < total; i++) {
+    const d = document.createElement('button');
+    d.className = 'dot' + (i === 0 ? ' active' : '');
+    d.setAttribute('role', 'tab');
+    d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+    d.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+    d.onclick = () => goTo(i);
+    dotsContainer.appendChild(d);
+  }
 }
 
-function goTo(n){
-  current=(n+total)%total;
-  slides.style.transform=`translateX(-${current*100}%)`;
-  document.querySelectorAll('.dot').forEach((d,i)=>{
-    d.classList.toggle('active',i===current);
-    d.setAttribute('aria-selected', i===current ? 'true' : 'false');
-  });
-  resetTimer();
+function goTo(n) {
+  // Ensure wrap-around works correctly
+  current = (n + total) % total;
+  slides.style.transform = 'translateX(-' + (current * 100) + '%)';
+  
+  // Update active dot
+  const dots = document.querySelectorAll('.dot');
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].classList.toggle('active', i === current);
+    dots[i].setAttribute('aria-selected', i === current ? 'true' : 'false');
+  }
+  
+  // Reset the timer to prevent overlapping intervals
+  clearInterval(timer);
+  timer = setInterval(() => {
+    goTo(current + 1);
+  }, 4500);
 }
-function changeSlide(dir){goTo(current+dir);}
-function resetTimer(){clearInterval(timer);timer=setInterval(()=>goTo(current+1),4500);}
-resetTimer();
 
-// Wishlist toggle with ARIA state
-document.querySelectorAll('.card-wish').forEach(btn=>{
-  btn.onclick=()=>{
-    const isWished = btn.textContent==='❤️';
+function changeSlide(dir) {
+  goTo(current + dir);
+}
+
+// Start the timer
+timer = setInterval(() => {
+  goTo(current + 1);
+}, 4500);
+
+// Wishlist toggle
+document.querySelectorAll('.card-wish').forEach(btn => {
+  btn.onclick = () => {
+    const isWished = btn.textContent === '❤️';
     btn.textContent = isWished ? '🤍' : '❤️';
     btn.setAttribute('aria-pressed', !isWished);
     btn.setAttribute('aria-label', isWished ? 'Remove from wishlist' : 'Add to wishlist');
   };
 });
 </script>
-
 <!-- 🧩 DYNAMIC PRODUCT SCHEMA INJECTION (TECHNICAL SEO) -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
