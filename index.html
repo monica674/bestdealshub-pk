@@ -1832,48 +1832,6 @@ document.querySelectorAll('.card-wish').forEach(btn=>{
 });
 </script>
 
-<!-- 🧩 DYNAMIC PRODUCT SCHEMA INJECTION (TECHNICAL SEO) -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Inject Product schema for each product card
-  document.querySelectorAll('.product-card').forEach((card, index) => {
-    const title = card.querySelector('.product-title')?.textContent?.trim() || '';
-    const image = card.querySelector('.product-img')?.src || '';
-    const priceText = card.querySelector('.price')?.textContent?.replace('PKR ', '').trim() || '';
-    const reviewCount = card.querySelector('.reviews')?.textContent?.match(/\d+/)?.[0] || '0';
-    const url = card.querySelector('.card-btn')?.href || '';
-    
-    const schema = {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      "name": title,
-      "image": image,
-      "description": title,
-      "sku": `BDH-${index + 1}`,
-      "brand": { "@type": "Brand", "name": "Daraz Pakistan" },
-      "offers": {
-        "@type": "Offer",
-        "url": url,
-        "priceCurrency": "PKR",
-        "price": priceText,
-        "priceValidUntil": "2026-12-31",
-        "availability": "https://schema.org/InStock",
-        "itemCondition": "https://schema.org/NewCondition"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.5",
-        "reviewCount": reviewCount
-      }
-    };
-    
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.textContent = JSON.stringify(schema);
-    card.appendChild(script);
-  });
-});
-</script>
 
 <!-- 📊 GOOGLE ANALYTICS 4 (REPLACE G-XXXXXXXXXX WITH YOUR ID) -->
 <!--
